@@ -1,7 +1,7 @@
 # MultiRobloxWatcher
 
 A program that closes the `ROBLOX_singletonEvent` when launching Roblox, to allow playing on multiple accounts at once.
-
+Works with Windows 11 and 10.
 ## How it works
 
 Roblox builds guard against a second instance using a named `Event` kernel object (`...\BaseNamedObjects\ROBLOX_singletonEvent`). This watcher runs quietly in the system tray and:
@@ -10,6 +10,7 @@ Roblox builds guard against a second instance using a named `Event` kernel objec
 2. The first time it detects Roblox has launched, it waits ~4 seconds (to let Roblox finish creating the event), then force-closes that Event handle inside Roblox's own process, the same handle-enumeration technique Sysinternals' `handle.exe -c` uses (`NtQuerySystemInformation` + `DuplicateHandle` with `DUPLICATE_CLOSE_SOURCE`).
 3. If it fails, it retries once on the next tick; if it still fails, it shows a tray notification and stops trying until Roblox is closed and relaunched.
 4. Once handled, it leaves things alone, even if more Roblox windows are opened, until every Roblox process has fully closed, then resets and watches for the next launch.
+(No need for admin rights, and 3rd party launchers like Bloxstrap and Fishstrap are supported)
 
 ## Features
 
@@ -18,7 +19,7 @@ Roblox builds guard against a second instance using a named `Event` kernel objec
 - Runs automatically at Windows login
 - Negligible CPU usage. The expensive handle scan only runs once per Roblox launch, not on every tick
 
-## Building
+## Building (The prebuilt binary is also provided)
 
 Requirements: Visual Studio (Desktop development with C++ workload).
 
@@ -34,7 +35,7 @@ Inspired by [MultiRoblox](https://github.com/Dashbloxx/MultiRoblox) by Dashbloxx
 
 ## Disclaimer
 
-This is vibecoded. yeah sorry guys, not leraning how to code for 30kb of lines. This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning chance so at your own risk. I also recommend putting it in your shell:startup folder to make it run on startup so you don't have to execute it every single time ( Win+R, shell:startup, copy paste the file there.)
+This is vibecoded. yeah sorry guys, not learning how to code for 30kb worth of lines. This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning risk so no worries for your boblox account. I also recommend putting it in your shell:startup folder to make it run on startup so you don't have to execute it every single time ( Win+R, shell:startup, copy paste the file there.)
 
 ## License
 
