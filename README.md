@@ -16,7 +16,6 @@ Roblox builds guard against a second instance using a named `Event` kernel objec
 
 - System tray icon, no visible window
 - Enable/Disable checking from the tray menu
-- Runs automatically at Windows login
 - Negligible CPU usage. The expensive handle scan only runs once per Roblox launch, not on every tick
 
 ## Building (The prebuilt binary is also provided)
@@ -31,11 +30,11 @@ Requirements: Visual Studio (Desktop development with C++ workload).
 
 ## Credit / prior art
 
-Inspired by [MultiRoblox](https://github.com/Dashbloxx/MultiRoblox) by Dashbloxx, which achieves the same goal (multiple simultaneous Roblox instances) via a different technique (pre-claiming the singleton mutex before Roblox launches). This project targets the newer Event-based singleton check with a different implementation, which I find more reliable.
+Inspired by [MultiRoblox](https://github.com/Dashbloxx/MultiRoblox) by Dashbloxx, that does the same thing (multiple simultaneous Roblox instances) BUT with a different technique (pre-claiming the singleton mutex before Roblox launches). I instead targeted the Event-based singleton check with a different implementation, which I find more reliable.
 
 ## Disclaimer
 
-This is vibecoded. yeah sorry guys, not learning how to code for 30kb worth of lines. This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning risk so no worries for your boblox account. I also recommend putting it in your shell:startup folder to make it run on startup so you don't have to execute it every single time ( Win+R, shell:startup, copy paste the file there.)
+This is vibecoded. yeah sorry guys, not learning to code for 30kb of code. This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning risk so no worries for your boblox account. I also recommend putting it in your shell:startup folder to make it run on startup so you don't have to execute it every single time ( Win+R, shell:startup, copy paste the file there.)
 
 ## License
 
