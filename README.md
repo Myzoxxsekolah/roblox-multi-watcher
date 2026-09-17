@@ -34,7 +34,7 @@ Inspired by [MultiRoblox](https://github.com/Dashbloxx/MultiRoblox) by Dashbloxx
 
 ## Disclaimer
 
-This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning chance so at your own risk.
+This only manipulates a kernel object inside your own local Roblox process, on your own machine, and it's extremely low to no banning chance so at your own risk. I also recommend putting it in your shell:startup folder to make it run on startup so you don't have to execute it every single time ( Win+R, shell:startup, copy paste the file there.)
 
 ## License
 
