@@ -1,0 +1,2 @@
+#include "resource.h"
+IDI_TRAYICON ICON "tray_icon.ico"
